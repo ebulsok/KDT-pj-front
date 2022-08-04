@@ -1,0 +1,33 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  height: 20000px;
+  background-color: aqua;
+}
+
+section .slide_text {
+  font-size: 60px;
+}
+
+section .slide_text p:nth-child(2) {
+  display: none;
+}
+
+section .slide_text p:nth-child(3) {
+  text-align: center;
+  height: 300px;
+}
+
+/*# sourceMappingURL=style.css.map */
