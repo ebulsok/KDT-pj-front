@@ -2,7 +2,7 @@ const slide = document.querySelector(".slide_text");
 const body = document.querySelector("body");
 const slideEl = document.querySelectorAll(".slide")
 const slideElR = document.querySelectorAll(".slide_R")
-const slideP=document.querySelector(".slide_text >p:nth-child(3)")
+const slideP=document.querySelector(".slogan")
 const second=document.querySelector(".second >p");
 const underBtn=document.querySelector(".footer > a");
 // querySelectorAll로 불러오는 요소는 요소를 하나로 불러오는게 아니라
@@ -13,23 +13,25 @@ const underBtn=document.querySelector(".footer > a");
 
 //scroll
 
-let ScrollYpos;
+let scrollYpos;
 
 window.addEventListener("scroll", function(){
-    ScrollYpos = window.scrollY;
+    scrollYpos = window.scrollY;
+    console.log(scrollYpos);
 
-    if(ScrollYpos >10 && ScrollYpos <= 400){
+    if(scrollYpos >10 && scrollYpos <= 400){
         body.style.backgroundColor="red";
          slideEl[0].classList.add("on") ;
          slideEl[1].classList.add("on") ;
          slideElR[0].classList.add("on");
          slideElR[1].classList.add("on");
          slide.style.display="block";
-         underBtn.style.color="white";
-        
-
+         underBtn.style.color="white";       
+        slideP.style.transform = `scale(${20/scrollYpos})`;
+        console.log(400/scrollYpos);
+     
     }
-    else if(ScrollYpos >400 && ScrollYpos <=800){
+    else if(scrollYpos >400 && scrollYpos <=800){
         slideEl[0].classList.remove("on") ;
         slideEl[1].classList.remove("on") ;
         slideElR[0].classList.remove("on");
@@ -40,9 +42,9 @@ window.addEventListener("scroll", function(){
         // slideElR[1].style.display="none";
         // slideP.style.display="none";
         body.style.backgroundColor="aqua";
-        //글자 크기 줄여보기 << 써글 아직 못찾음
-        slideP.style.Text="20px";
-        second.classList.add("on");
+        slideP.style.transform = `scale(${20/scrollYpos})`;
+   
+        
     }
     else{
         body.style.backgroundColor="aqua";

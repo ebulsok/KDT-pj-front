@@ -26,7 +26,8 @@ header div .logo {
   color: blue;
   font-size: 50px;
   margin-left: 60px;
-  padding: 10px;
+  padding: 5px;
+  position: fixed;
 }
 header div .bars {
   color: white;
@@ -35,16 +36,20 @@ header div .bars {
   margin-right: 50px;
   margin-top: -65px;
   padding: 5px;
+  position: fixed;
 }
 header div .bars.hide {
   opacity: 0;
 }
 
 section {
-  z-index: 2;
+  height: 2000000px;
 }
 section .slide_text {
-  height: 100vh;
+  margin-top: 50px;
+  width: 100%;
+  position: fixed;
+  height: 100%;
   font-size: 50px;
   font-family: "Square Peg", cursive;
   display: flex;
@@ -76,6 +81,7 @@ section .slide_text p:nth-child(3) {
   align-items: center;
   text-align: center;
   height: 100px;
+  transition: transform linear;
 }
 section .second {
   opacity: 0;
@@ -112,12 +118,11 @@ section .icon2 {
   width: 200px;
   height: 200px;
   animation: img3 linear 3s infinite;
-  z-index: 1;
 }
 
 .footer {
-  display: fixed;
-  position: absolute;
+  position: fixed;
+  display: flex;
   right: 10%;
   top: 90%;
 }
