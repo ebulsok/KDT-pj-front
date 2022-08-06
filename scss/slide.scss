@@ -1,0 +1,97 @@
+/* FONTS*/
+
+/* RESET */
+@import "reset";
+
+/* COMMON */
+figure {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    header {
+        display: flex;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 3vh 3vw;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 3;
+
+        .xMark {
+            transition: 1s;
+            transition-delay: 1s;
+            font-size: 30px;
+            opacity: 0;
+        }
+    }
+
+    section {
+        width: 20vw;
+        height: 65vh;
+        position: absolute;
+        top: 150%;
+        left: 50%;
+        margin: -32.5vh 0 0 -10vw;
+        transition: 1s;
+
+        article {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            perspective: 1000px;
+            transition: opacity .5s;
+
+            .card {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                transform-style: preserve-3d;
+                transition: 1s;
+
+                background-color: lightblue;
+
+                .front, .back {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    backface-visibility: hidden;
+                }
+
+                .front {}
+
+                .back {
+                    transform: rotateY(180deg);
+
+                    background-color: lightcoral;
+
+                    .inner {
+                        display: none;
+                    }
+                }
+            }
+
+            &.on {
+                .card {
+                    transform: rotateY(180deg);
+                    
+                    .back {
+                        width: 103vw;
+                        height: 103vh;
+                        top: -18.5vh;
+                        left: -41vw;
+                        
+                        .inner {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
