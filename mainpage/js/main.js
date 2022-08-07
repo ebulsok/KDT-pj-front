@@ -47,31 +47,29 @@ window.addEventListener("scroll", function(){
     }
     
  //슬라이드 문자가 흐릿해지는 시점
-    if(scrollYpos >5600 && scrollYpos <10000){
+    if(scrollYpos >5600 && scrollYpos <9500){
         slidetext.style.opacity= `${3500/scrollYpos}`;
         console.log(scrollYpos);  
     }
-    // slide_text_2 텍스트의 opacity가 조금씩 1로 바뀌는 시점
-    // if(scrollYpos >5600 && scrollYpos <???){
-    // }
 
-    // <opacity + 글자 위치 변경>
-    
-    function phase2(){
-
+    // 첫번째 슬라이드가 사라지는 지점
+    if(scrollYpos>=9500) {
+        slidetext.style.display="none";
     }
+
+    
 
     let staggerItemlen = staggerItem.length;
     let dx = 50;
-    const 시작 = 8000;
-    const 종료 = 시작 + dx*10;
+    const start = 8000;
+    const finish = start + dx*10;
     for(let i=0; i<staggerItemlen; i++){
-        if(scrollYpos >= 시작 + i*dx && scrollYpos < 종료 + i*dx ){
+        if(scrollYpos >= start + i*dx && scrollYpos < 종료 + i*dx ){
             bodyEl.style.backgroundColor="skyblue";
             console.log(scrollYpos);  
-            staggerItem[i].style.transform= `translateY(${(시작+ i*dx - scrollYpos)/4 }px)`;
-            a = 시작 + i*dx
-            b = 종료 + i*dx
+            staggerItem[i].style.transform= `translateY(${(start+ i*dx - scrollYpos)/4 }px)`;
+            a = start + i*dx
+            b = finish + i*dx
             console.log('a,b,i',a,b,i)
             staggerItem[i].style.opacity = `${(scrollYpos-a / b-a) /100}`
 
@@ -95,10 +93,6 @@ window.addEventListener("scroll", function(){
 
 
     // <화이트 - 블랙>
-    // 첫번째 슬라이드가 사라지는 지점
-    if(scrollYpos>=13000) {
-        slidetext.style.display="none";
-    }
 
     // < intriguing - surprising>
 
