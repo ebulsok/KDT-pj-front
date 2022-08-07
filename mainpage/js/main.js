@@ -20,14 +20,14 @@ window.addEventListener("scroll", function(){
     console.log(scrollYpos);
 
     if(scrollYpos >10 && scrollYpos <= 400){
-        body.style.backgroundColor="red";
+        // body.style.backgroundColor="red";
          slideEl[0].classList.add("on") ;
          slideEl[1].classList.add("on") ;
          slideElR[0].classList.add("on");
          slideElR[1].classList.add("on");
          slide.style.display="block";
          underBtn.style.color="white";       
-        slideP.style.transform = `scale(${20/scrollYpos})`;
+        slideP.style.transform = `scale(${600/scrollYpos})`;
         console.log(400/scrollYpos);
      
     }
@@ -41,13 +41,13 @@ window.addEventListener("scroll", function(){
         // slideElR[0].style.display="none";
         // slideElR[1].style.display="none";
         // slideP.style.display="none";
-        body.style.backgroundColor="aqua";
+        // body.style.backgroundColor="aqua";
         slideP.style.transform = `scale(${20/scrollYpos})`;
    
         
     }
     else{
-        body.style.backgroundColor="aqua";
+        // body.style.backgroundColor="aqua";
         underBtn.style.color="rgb(209, 209, 117)";
             
     }
