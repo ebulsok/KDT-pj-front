@@ -2,6 +2,7 @@ const slide = document.querySelector(".slide_text");
 const body = document.querySelector("body");
 const slideEl = document.querySelectorAll(".slide")
 const slideElR = document.querySelectorAll(".slide_R")
+const slideEl2 =document.querySelector(".slide_text_2")
 const slideP=document.querySelector(".slogan")
 const underBtn=document.querySelector(".footer > a");
 // querySelectorAll로 불러오는 요소는 요소를 하나로 불러오는게 아니라
@@ -18,33 +19,45 @@ window.addEventListener("scroll", function(){
     scrollYpos = window.scrollY;
     console.log(scrollYpos);
 
-    if(scrollYpos >0 && scrollYpos <= 2120){
+    if(scrollYpos >0 && scrollYpos <= 4600){
         body.style.backgroundColor="red";
          slideEl[0].classList.add("on") ;
          slideEl[1].classList.add("on") ;
          slideElR[0].classList.add("on");
          slideElR[1].classList.add("on");
-         slide.style.display="block";
          underBtn.style.color="white";       
          slideP.style.transform = `scale(${70/scrollYpos})`;
-        console.log(scrollYpos);
+        console.log(70/scrollYpos);
      
     }
+    
   //가운데 글자가 없어지는 시점
-    else if(scrollYpos >2120 && scrollYpos <=2400){
-        body.style.backgroundColor="yellow";      
+    else if(scrollYpos >4601 && scrollYpos <=5600){
+        body.style.backgroundColor="yellow";   
+ 
     }
 
     
  // 슬라이드 문자가 흐릿해지는 시점
-    else if(scrollYpos >2401 && scrollYpos <10000){
-        slide.style.opacity= `${1600/scrollYpos}`;
-        let opacity = slide.style.opacity;
-        console.log(opacity);
-    }
+    // else if(scrollYpos >5600 && scrollYpos <20000){
+    //     slide.style.opacity= `${3500/scrollYpos}`;
+    //     let opacity = slide.style.opacity;
+    //     console.log(opacity);
+    // }
+    // 두번째 컨텐츠 요소가 나타나는 시점
+    // if(scrollYpos <15000){
+    //     slideEl[0].classList.add("on") ;
+    //     slideEl[1].classList.add("on") ;
+    //     slideElR[0].classList.add("on");
+    //     slideElR[1].classList.add("on");
+    // }
+    // else if(scrollYpos>=15000  ){
+    //     slideEl2.style.display= "block";
+    //     slideEl2.style.opacity = `${scrollYpos/3500}`      
+       
+    // }
 
     else{
-     
         body.style.backgroundColor="aqua";
         underBtn.style.color="rgb(209, 209, 117)";
             
