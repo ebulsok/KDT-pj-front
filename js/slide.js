@@ -1,12 +1,10 @@
 const frame = document.querySelector("section");
 const list = frame.querySelectorAll("article");
+const xMark = document.querySelector(".xMark");
 const len = list.length;
 const deg = 360 / len;
 
-let korea = document.querySelector(".korea");
-
-let xMark = document.querySelector(".xMark");
-
+// Drag
 let startX, endX;
 let temp = 0;
 document.querySelector("body").addEventListener("mousedown", function(e) {
@@ -15,10 +13,11 @@ document.querySelector("body").addEventListener("mousedown", function(e) {
 });
 document.querySelector("body").addEventListener("mouseup", function(e) {
     endX = e.screenX;
-    frame.style.transform = `rotate(${temp = temp - (startX-endX)/15 }deg)`;
+    frame.style.transform = `rotate(${temp = temp - (startX-endX)/13 }deg)`;
     console.log(temp);
 });
 
+// Frame, Click
 for(let i = 0; i < len; i++) {
     list[i].style.transform = `rotate(${deg * i}deg) translateY(-100vh)`;
 
@@ -55,7 +54,8 @@ for(let i = 0; i < len; i++) {
         } else {
             prev = i - 1;
             next = i + 1;
-        }
+        };
+
         list[prev].style.opacity = "0";
         list[next].style.opacity = "0";
         xMark.style.opacity = "1";
@@ -69,6 +69,5 @@ for(let i = 0; i < len; i++) {
             xMark.style.opacity = "0";
             frame.style.transform = `rotate(${-deg_rotate}deg)`;
         });
-
     })
 };
