@@ -26,8 +26,8 @@ window.addEventListener("scroll", function(){
          slideElR[0].classList.add("on");
          slideElR[1].classList.add("on");
          underBtn.style.color="white";       
-         slideP.style.transform = `scale(${70/scrollYpos})`;
-        console.log(70/scrollYpos);
+         slideP.style.transform = `scale(${80/scrollYpos})`;
+         console.log(scrollYpos);
      
     }
     
@@ -38,13 +38,13 @@ window.addEventListener("scroll", function(){
     }
 
     
- // 슬라이드 문자가 흐릿해지는 시점
-    // else if(scrollYpos >5600 && scrollYpos <20000){
-    //     slide.style.opacity= `${3500/scrollYpos}`;
-    //     let opacity = slide.style.opacity;
-    //     console.log(opacity);
-    // }
-    // 두번째 컨텐츠 요소가 나타나는 시점
+ //슬라이드 문자가 흐릿해지는 시점
+    else if(scrollYpos >5600 && scrollYpos <20000){
+        slide.style.opacity= `${3500/scrollYpos}`;
+        let opacity = slide.style.opacity;
+        console.log(opacity);
+    }
+  //  두번째 컨텐츠 요소가 나타나는 시점
     // if(scrollYpos <15000){
     //     slideEl[0].classList.add("on") ;
     //     slideEl[1].classList.add("on") ;
