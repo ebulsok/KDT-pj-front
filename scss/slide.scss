@@ -1,4 +1,10 @@
 /* FONTS*/
+@font-face {
+    font-family: 'HeirofLightBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* RESET */
 @import "reset";
@@ -9,6 +15,13 @@ figure {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background-color: gray;
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
     header {
         display: flex;
@@ -19,7 +32,12 @@ figure {
         padding: 3vh 3vw;
         justify-content: space-between;
         align-items: center;
+        transition: 1s;
         z-index: 3;
+
+        h2 {
+            font: 25px 'HeirofLightBold';
+        }
 
         .xMark {
             transition: 1s;
@@ -30,12 +48,12 @@ figure {
     }
 
     section {
-        width: 20vw;
+        width: 25vw;
         height: 65vh;
         position: absolute;
         top: 150%;
         left: 50%;
-        margin: -32.5vh 0 0 -10vw;
+        margin: -32.5vh 0 0 -15vw;
         transition: 1s;
 
         article {
@@ -95,3 +113,5 @@ figure {
         }
     }
 }
+
+@import "slideKorea";
