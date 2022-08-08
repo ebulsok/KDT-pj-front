@@ -61,15 +61,15 @@ window.addEventListener("scroll", function(){
 
     let staggerItemlen = staggerItem.length;
     let dx = 50;
-    const start = 8000;
-    const finish = start + dx*10;
+    const 시작 = 8000;
+    const 종료 = 시작 + dx*10;
     for(let i=0; i<staggerItemlen; i++){
-        if(scrollYpos >= start + i*dx && scrollYpos < 종료 + i*dx ){
+        if(scrollYpos >= 시작 + i*dx && scrollYpos < 종료 + i*dx ){
             bodyEl.style.backgroundColor="skyblue";
             console.log(scrollYpos);  
-            staggerItem[i].style.transform= `translateY(${(start+ i*dx - scrollYpos)/4 }px)`;
-            a = start + i*dx
-            b = finish + i*dx
+            staggerItem[i].style.transform= `translateY(${(시작+ i*dx - scrollYpos)/4 }px)`;
+            a = 시작 + i*dx
+            b = 종료 + i*dx
             console.log('a,b,i',a,b,i)
             staggerItem[i].style.opacity = `${(scrollYpos-a / b-a) /100}`
 

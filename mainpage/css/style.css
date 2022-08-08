@@ -95,7 +95,7 @@ section .slide_text_2 {
 section .slide_text_2 .stagger_item {
   opacity: 0;
   display: inline-block;
-  font-size: 160px;
+  font-size: 120px;
   padding: 20px;
   color: white;
 }
