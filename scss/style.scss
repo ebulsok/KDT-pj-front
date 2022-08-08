@@ -4,3 +4,130 @@
 @import "reset";
 
 /* COMMON */
+section {
+    width: 100%;
+    height: 10000px;
+    position: relative;
+    overflow: hidden;
+
+    .scroll_1 {
+        width: 100%;
+        height: 4000px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color: lightblue;
+        overflow: hidden;
+
+        .slide {
+            display: flex;
+            position: absolute;
+            opacity: 0;
+            transition: 1s;
+
+            &:nth-of-type(1) {
+                top: calc(20vh - 25px);
+            }
+            &:nth-of-type(2) {
+                top: calc(40vh - 25px);
+            }
+            &:nth-of-type(3) {
+                top: calc(60vh - 25px);
+            }
+            &:nth-of-type(4) {
+                top: calc(80vh - 25px);
+            }
+
+            &.on {
+                opacity: 1;
+            }
+
+            &.slide_L {
+                .scroll_wrap {
+                    &.roller_1{
+                        animation: 20s linear 0s infinite normal forwards running rollingleft1;
+                    }
+                    &.roller_2{
+                        animation: 20s linear 0s infinite normal none running rollingleft2;
+                    }
+                }
+            }
+
+            &.slide_R {
+                .scroll_wrap {
+                    &.roller_1{
+                        animation: 20s linear 0s infinite normal none running rollingright1;
+                    }
+                    &.roller_2{
+                        animation: 20s linear 0s infinite normal forwards running rollingright2;
+                    }
+                }
+            }
+
+            .scroll_wrap {
+                will-change: transform;
+                white-space: nowrap;
+    
+                > span {
+                    font-size: 50px;
+                }
+            }
+        }
+
+        .middle {
+            width: 100%;
+            position: absolute;
+            top: calc(50vh - 25px);
+            text-align: center;
+            font-size: 50px;
+        }
+    }
+}
+
+@keyframes rollingright1 { /* 원본용 */
+    0% {
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+@keyframes rollingright2 { /* 클론용 */
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    50.01% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes rollingleft1 { /* 원본용 */
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    50.01% {
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes rollingleft2 { /* 클론용 */
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}

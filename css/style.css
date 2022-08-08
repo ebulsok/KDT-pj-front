@@ -1,0 +1,128 @@
+@charset "UTF-8";
+/* FONTS*/
+/* RESET */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* COMMON */
+section {
+  width: 100%;
+  height: 10000px;
+  position: relative;
+  overflow: hidden;
+}
+section .scroll_1 {
+  width: 100%;
+  height: 4000px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: lightblue;
+  overflow: hidden;
+}
+section .scroll_1 .slide {
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  transition: 1s;
+}
+section .scroll_1 .slide:nth-of-type(1) {
+  top: calc(20vh - 25px);
+}
+section .scroll_1 .slide:nth-of-type(2) {
+  top: calc(40vh - 25px);
+}
+section .scroll_1 .slide:nth-of-type(3) {
+  top: calc(60vh - 25px);
+}
+section .scroll_1 .slide:nth-of-type(4) {
+  top: calc(80vh - 25px);
+}
+section .scroll_1 .slide.on {
+  opacity: 1;
+}
+section .scroll_1 .slide.slide_L .scroll_wrap.roller_1 {
+  animation: 20s linear 0s infinite normal forwards running rollingleft1;
+}
+section .scroll_1 .slide.slide_L .scroll_wrap.roller_2 {
+  animation: 20s linear 0s infinite normal none running rollingleft2;
+}
+section .scroll_1 .slide.slide_R .scroll_wrap.roller_1 {
+  animation: 20s linear 0s infinite normal none running rollingright1;
+}
+section .scroll_1 .slide.slide_R .scroll_wrap.roller_2 {
+  animation: 20s linear 0s infinite normal forwards running rollingright2;
+}
+section .scroll_1 .slide .scroll_wrap {
+  will-change: transform;
+  white-space: nowrap;
+}
+section .scroll_1 .slide .scroll_wrap > span {
+  font-size: 50px;
+}
+section .scroll_1 .middle {
+  width: 100%;
+  position: absolute;
+  top: calc(50vh - 25px);
+  text-align: center;
+  font-size: 50px;
+}
+
+@keyframes rollingright1 { /* 원본용 */
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes rollingright2 { /* 클론용 */
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  50.01% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes rollingleft1 { /* 원본용 */
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  50.01% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes rollingleft2 { /* 클론용 */
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
