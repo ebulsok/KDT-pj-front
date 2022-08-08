@@ -8,20 +8,20 @@ let korea = document.querySelector(".korea");
 
 
 //drag rotate
-let startX, endX;
-let temp = 0;
-body.addEventListener("mousedown", function (e) {
-  startX = e.screenX;
+// let startX, endX;
+// let temp = 0;
+// body.addEventListener("mousedown", function (e) {
+//   startX = e.screenX;
 
-  figure.style.cursor = "grabbing";
-});
-body.addEventListener("mouseup", function (e) {
-  endX = e.screenX;
-  frame.style.transform = `rotate(${(temp = temp - (startX - endX) / 15)}deg)`;
-  console.log(temp);
+//   figure.style.cursor = "grabbing";
+// });
+// body.addEventListener("mouseup", function (e) {
+//   endX = e.screenX;
+//   frame.style.transform = `rotate(${(temp = temp - (startX - endX) / 15)}deg)`;
+//   console.log(temp);
 
-  figure.style.cursor = "grab";
-});
+//   figure.style.cursor = "grab";
+// });
 
 for (let i = 0; i < len; i++) {
   list[i].style.transform = `rotate(${deg * i}deg) translateY(-100vh)`;
@@ -114,3 +114,42 @@ for(let i=0; i<len; i++){
   frontPage[i].style.backgroundColor = colorList[i];
   photoCard[i].style.backgroundColor = colorList[i];
 }
+
+
+
+// drag move 
+let pressed = false;
+let startx, finishx;
+let dragSum = 0;
+// let vh = document.body.clientHeight;
+
+figure.addEventListener("mousedown", e => {
+    pressed = true;
+    startx = e.offsetX;
+    figure.style.cursor = "grabbing";
+})
+
+figure.addEventListener("mouseenter", () => {
+    figure.style.cursor = "grab";
+})
+
+figure.addEventListener("mouseup", e => {
+    figure.style.cursor = "grab";
+})
+
+window.addEventListener("mouseup", () => {
+    pressed = false;
+
+})
+
+//마우스 드래그 시
+figure.addEventListener("mousemove", e => {
+    if (!pressed) return
+    e.preventDefault();
+    finishx = e.offsetX;
+    dragSum -= startx - finishx; 
+    console.log(dragSum/20);
+
+    frame.style.transform = `rotate(${dragSum/150}deg)`;    
+})
+

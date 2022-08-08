@@ -329,7 +329,8 @@ article .card .page_2 .inner .inner_top .bar {
 article .flip {
   z-index: 2;
 }
-article .flip .page_1, article .flip .page_2 {
+article .flip .page_1,
+article .flip .page_2 {
   width: 50vw;
   height: 100vh;
 }
@@ -341,6 +342,25 @@ article .flip .page_1 .page_front {
 }
 article .flip .page_2 {
   box-shadow: inset 5px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  cursor: none;
+}
+body .cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--color-texta);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transition-property: background, transform;
+  transform-origin: 100% 100%;
+  backdrop-filter: sepia(20%);
+  background-size: cover;
 }
 
 /*# sourceMappingURL=slide.css.map */

@@ -1,5 +1,6 @@
 /* FONT */
 @import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+
 /* font-family: 'Song Myung', serif; */
 @font-face {
     font-family: 'ghanachoco';
@@ -7,6 +8,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Bohyun';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Bohyun.woff') format('woff');
@@ -16,10 +18,10 @@
 
 
 article {
-    .card{
+    .card {
         position: absolute;
         transition: 1s;
-        
+
         >div {
             position: absolute;
             top: 0;
@@ -46,7 +48,7 @@ article {
                     background-color: rgb(148, 148, 148);
                     transition: .5s;
                     transition-delay: .8s;
-                    
+
                     .inner {
                         position: relative;
                         margin: 5% auto;
@@ -93,7 +95,7 @@ article {
                             color: rgb(225, 214, 210);
                             font: 17px 'Song Myung';
                         }
-                        
+
                         p:nth-of-type(3) {
                             bottom: 1%;
                             left: calc(50% - 7.5px);
@@ -142,7 +144,7 @@ article {
                                 z-index: 3;
                             }
                         }
-                                                    
+
                         .sticker {
                             position: absolute;
                             top: 2%;
@@ -174,15 +176,15 @@ article {
                 overflow: hidden;
                 // background-color: yellow;
 
-                .inner_top{
-                    
+                .inner_top {
+
                     p {
                         position: absolute;
                         display: inline-block;
                     }
 
                     p:not(:first-child) {
-                            font: 20px 'Bohyun';
+                        font: 20px 'Bohyun';
                     }
 
                     p:nth-of-type(1) {
@@ -235,6 +237,7 @@ article {
                         height: 10%;
                         border-radius: 50%;
                     }
+
                     .sticker:nth-of-type(1) {
                         top: 15%;
                         left: 3%;
@@ -269,10 +272,12 @@ article {
     .flip {
         z-index: 2;
 
-        .page_1, .page_2 {
+        .page_1,
+        .page_2 {
             width: 50vw;
             height: 100vh;
         }
+
         .page_1 {
             transform: rotateY(-180deg);
 
@@ -280,14 +285,33 @@ article {
                 opacity: 0;
             }
 
-            .page_back {
-            }
+            .page_back {}
         }
 
         .page_2 {
-            box-shadow: inset 5px 0px 10px rgba(0,0,0,0.2);
+            box-shadow: inset 5px 0px 10px rgba(0, 0, 0, 0.2);
         }
     }
 }
 
-article:nth-child(2) {} 
+article:nth-child(2) {}
+
+body {
+    cursor: none;
+
+    .cursor {
+        width: 3rem;
+        height: 3rem;
+        border: 2px solid var(--color-texta);
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1000;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        transition: all 0.3s ease;
+        transition-property: background, transform;
+        transform-origin: 100% 100%;
+        backdrop-filter: sepia(20%);
+        background-size: cover;
+    }
+}
