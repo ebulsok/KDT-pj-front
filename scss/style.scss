@@ -3,4 +3,32 @@
 /* RESET */
 @import "reset";
 
+body {
+    overflow-x: hidden;
+}
+
 /* COMMON */
+section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    header {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        padding: 2vh 2vw;
+
+        a {
+            font: bold 30px 'arial';
+        }
+    }
+
+    @import "scroll1";
+    @import "scroll2";
+    @import "scroll3";
+
+}
