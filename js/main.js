@@ -42,34 +42,34 @@ let li3 = document.querySelector(".li3").offsetWidth;
 //     scale: 0,
 // });
 
-const scroll1 = gsap.timeline({
+const scroll = gsap.timeline({
     scrollTrigger: {
         trigger: "section",
         start: "top top",
-        end: "+=10000",
+        end: "+=15000",
         scrub: true,
         pin: true,
         markers: true,
     }
 });
 
-// scroll1.from(".slide_L", {
-//     scrollTrigger: {
-//         trigger: ".scroll_1",
-//         start: "100",
-//         end: "400",
-//         scrub: true,
-//         pin: true,
-//     }, left: "80%", opacity: 0, })
-// .from(".slide_R", {
-//     scrollTrigger: {
-//         trigger: ".scroll_1",
-//         start: "100",
-//         end: "400",
-//         scrub: true,
-//         pin: true,
-//     }, left: "-80%", opacity: 0, }, "<")
-scroll1.to(".middle", { scale: 0, }, "<")
+scroll.from(".slide_L", {
+    scrollTrigger: {
+        trigger: "scroll_1",
+        start: "100",
+        end: "400",
+        scrub: true,
+        pin: true,
+    }, left: "80%", opacity: 0, })
+.from(".slide_R", {
+    scrollTrigger: {
+        trigger: "scroll_1",
+        start: "100",
+        end: "400",
+        scrub: true,
+        pin: true,
+    }, left: "-80%", opacity: 0, }, "<")
+.to(".middle", { scale: 0, duration: 3, }, "<")
 .to(".scroll_2", { opacity: 1, })
 .to(".word1", { y: 30, opacity: 1, })
 .to(".word2", { y: 30, opacity: 1, })
@@ -87,12 +87,85 @@ scroll1.to(".middle", { scale: 0, }, "<")
 .to("li", { y: 0, })
 .to(".word9", { width: `${li3}`, }, "<")
 .to(".scroll_3", { opacity: 1, })
-.to(".container", { bottom: 0, duration: 50, })
-.to(".w1", { opacity: 1, duration: 4, ease: Circ.easeIn, }, "<")
-.to(".w2", { opacity: 1, delay: 4, duration: 4, ease: Circ.easeIn, }, "<")
-.to(".w3", { opacity: 1, delay: 4, duration: 4, ease: Circ.easeIn, }, "<")
-.to(".w4", { opacity: 1, delay: 4, duration: 4, ease: Circ.easeIn, }, "<")
-.to(".w5", { opacity: 1, delay: 4, duration: 4, ease: Circ.easeIn, }, "<")
-.to(".w6", { opacity: 1, delay: 4, duration: 4, ease: Circ.easeIn, }, "<")
-.to(".w7", { opacity: 1, delay: 4, duration: 4, ease: Circ.easeIn, }, "<")
-.to(".w8", { opacity: 1, delay: 4, duration: 4, ease: Circ.easeIn, }, "<")
+.to(".container", { bottom: 0, duration: 4, })
+.to(".w1", { opacity: 1, ease: Circ.easeIn, }, "<")
+.to(".w2", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
+.to(".w3", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
+.to(".w4", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
+.to(".w5", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
+.to(".w6", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
+.to(".w7", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
+.to(".w8", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<");
+
+// scroll1.from(".slide_L", {
+//     scrollTrigger: {
+//         trigger: "scroll_1",
+//         start: "100",
+//         end: "400",
+//         scrub: true,
+//         pin: true,
+//     }, left: "80%", opacity: 0, })
+// .from(".slide_R", {
+//     scrollTrigger: {
+//         trigger: "scroll_1",
+//         start: "100",
+//         end: "400",
+//         scrub: true,
+//         pin: true,
+//     }, left: "-80%", opacity: 0, }, "<")
+// .to(".middle", { scale: 0, duration: 3, }, "<");
+
+// scrollTrigger.create({
+//     animation: scroll1,
+//     trigger: "section",
+//     start: "top top",
+//     end: "+=4000",
+//     scrub: true,
+//     pin: true,
+// });
+
+// scroll2.to(".scroll_2", { opacity: 1, })
+// .to(".word1", { y: 30, opacity: 1, })
+// .to(".word2", { y: 30, opacity: 1, })
+// .to(".word3", { y: 30, opacity: 1, })
+// .to(".word4", { y: 60, opacity: 1, })
+// .to(".word5", { y: 60, opacity: 1, })
+// .to(".word6", { y: 60, opacity: 1, })
+// .to(".word7", { y: 60, opacity: 1, })
+// .to(".word8", { y: 90, opacity: 1, })
+// .to(".word9", { y: 90, opacity: 1, })
+// .to(".word10", { y: 90, opacity: 1, })
+// .to(".line", { width: "100%", })
+// .to("li", { y: -103.2, })
+// .to(".word9", { width: `${li2}`, }, "<")
+// .to("li", { y: 0, })
+// .to(".word9", { width: `${li3}`, }, "<")
+
+// scrollTrigger.create({
+//     animation: scroll2,
+//     trigger: ".scroll_1",
+//     start: "top top",
+//     end: "+=4000",
+//     scrub: true,
+//     pin: true,
+// });
+
+// scroll3.to(".scroll_3", { opacity: 1, })
+// .to(".container", { bottom: 0, duration: 3, })
+// .to(".w1", { opacity: 1, ease: Circ.easeIn, }, "<")
+// .to(".w2", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
+// .to(".w3", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
+// .to(".w4", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
+// .to(".w5", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
+// .to(".w6", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
+// .to(".w7", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
+// .to(".w8", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<");
+
+// scrollTrigger.create({
+//     animation: scroll3,
+//     trigger: ".scroll_2",
+//     start: "top top",
+//     end: "+=4000",
+//     scrub: true,
+//     pin: true,
+// });
