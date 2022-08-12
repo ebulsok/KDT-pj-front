@@ -39,12 +39,12 @@ figure {
             font: 25px 'HeirofLightBold';
         }
 
-        .xMark {
-            transition: 1s;
-            transition-delay: 1s;
-            font-size: 30px;
-            opacity: 0;
-        }
+        // .xMark {
+        //     transition: 1s;
+        //     transition-delay: 1s;
+        //     font-size: 30px;
+        //     opacity: 0;
+        // }
     }
 
     section {
@@ -111,7 +111,12 @@ figure {
                 }
             }
         }
+
+        // section.italy {
+        //     @import "italy";
+        // }
     }
 }
 
-@import "slideKorea";
+@import "slideSection";
+
