@@ -1,5 +1,11 @@
 @charset "UTF-8";
 /* FONTS*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+@font-face {
+  font-family: "Cafe24Oneprettynight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff");
+}
 /* RESET */
 * {
   margin: 0px;
@@ -29,6 +35,7 @@ section {
 }
 section header {
   width: 100%;
+  height: 65px;
   position: absolute;
   top: 0;
   left: 0;
@@ -195,6 +202,83 @@ section .scroll_3 .container > div > * {
   color: white;
   margin-left: 30px;
   opacity: 0;
+}
+section .scroll_4 {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+}
+section .scroll_4 video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  object-fit: cover;
+}
+section .scroll_4 .main_title {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  margin-top: 30px;
+  font: 400 60px/1 "Courgette", cursive;
+  text-shadow: 0 -3px 0 #333, 0 6px 8px rgba(0, 0, 0, 0.4), 0 9px 10px rgba(0, 0, 0, 0.15), 0 30px 10px rgba(0, 0, 0, 0.18), 0 15px 10px rgba(0, 0, 0, 0.21);
+  opacity: 0;
+}
+section .scroll_4 .article_wrapper {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  justify-content: space-evenly;
+}
+section .scroll_4 .article_wrapper article {
+  width: 25%;
+  padding: 5px;
+  background-color: lightblue;
+  opacity: 0;
+}
+section .scroll_4 .article_wrapper article .inner {
+  width: 100%;
+  padding-bottom: 5px;
+  background-color: white;
+  font-family: "Cafe24Oneprettynight";
+}
+section .scroll_4 .article_wrapper article .inner > * {
+  margin-bottom: 15px;
+}
+section .scroll_4 .article_wrapper article .inner .article_image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+section .scroll_4 .article_wrapper article .inner .article_image img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+section .scroll_4 .article_wrapper article .inner h2, section .scroll_4 .article_wrapper article .inner h3 {
+  text-align: center;
+  letter-spacing: 0.3rem;
+}
+section .scroll_4 .article_wrapper article .inner h3 {
+  letter-spacing: 0.5rem;
+  font-style: italic;
+}
+section .scroll_4 .article_wrapper article .inner ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 10%;
+}
+section .scroll_4 .article_wrapper article .inner ul.sub {
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=style.css.map */
