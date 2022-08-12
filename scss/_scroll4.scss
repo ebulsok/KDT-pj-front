@@ -21,10 +21,10 @@
         top: 8%;
         left: 0;
         text-align: center;
-        font: 400 4.5vw/1 "Courgette", cursive;
-        text-shadow: 0 -3px 0 #333, 0 6px 8px rgba(0, 0, 0, 0.4),
-          0 9px 10px rgba(0, 0, 0, 0.15), 0 30px 10px rgba(0, 0, 0, 0.18),
-          0 15px 10px rgba(0, 0, 0, 0.21);
+        font: 400 4.5vw/1 'LeferiPoint-SpecialItalicA';
+        // text-shadow: 0 -3px 0 #333, 0 6px 8px rgba(0, 0, 0, 0.4),
+        //   0 9px 10px rgba(0, 0, 0, 0.15), 0 30px 10px rgba(0, 0, 0, 0.18),
+        //   0 15px 10px rgba(0, 0, 0, 0.21);
     }
 
     .article_wrapper {
@@ -48,7 +48,7 @@
                 height: 100%;
                 // padding-bottom: 5px;
                 background-color: white;
-                font-family: 'Cafe24Oneprettynight';
+                font-family: 'NEXON Lv1 Gothic OTF';
                 
                 
                 .article_image {
@@ -89,12 +89,16 @@
                         flex-wrap: wrap;
                         justify-content: space-around;
                         padding: 0 10%;
-                        font-size: 1vw;
+                        font-size: 0.9vw;
                         color: #999;
                         
                         &.sub {
                             justify-content: space-between;
                             color: black;
+                        }
+
+                        li {
+                            margin-bottom: 5px;
                         }
                     }
                 }

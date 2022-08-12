@@ -4,14 +4,15 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color: lightblue;
+    background-color: #E16262;
     overflow: hidden;
     transition: 1s;
+    font-family: 'LeferiPoint-SpecialItalicA';
 
     .slide {
         display: flex;
         position: absolute;
-
+        
         &:nth-of-type(1) {
             top: calc(20vh - 25px);
         }
@@ -54,7 +55,7 @@
             white-space: nowrap;
 
             > span {
-                font-size: 60px;
+                font-size: 50px;
                 word-spacing: 20px;
                 letter-spacing: 5px;
             }
@@ -64,10 +65,10 @@
     .middle {
         width: 100%;
         position: absolute;
-        top: calc(50vh - 25px);
+        top: calc(50vh - 40px);
         text-align: center;
-        font-size: 60px;
-        line-height: 60px;
+        font-size: 80px;
+        font-weight: bold;
         transition: .1s;
     }
 }

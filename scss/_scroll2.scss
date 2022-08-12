@@ -4,26 +4,26 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color: blue;
+    background-color: #FABC60;
     opacity: 0;
-    
+
     > div {
         display: flex;
 
         > * {
-            font: 90px 'arial';
+            font: 90px 'LeferiPoint-SpecialItalicA';
             color: white;
             margin-left: 20px;
             opacity: 0;
 
             &.word9 {
-                width: 365px;
-                height: 103.2px;
+                width: 1px;
+                height: 1px;
                 overflow: hidden;
                 position: relative;
 
                 li {
-                    transform: translateY(-206.4px);
+                    transform: translateY(-238px);
                     display: inline-block;
                 }
 

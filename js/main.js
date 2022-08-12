@@ -7,7 +7,7 @@ const slides = document.querySelectorAll(".slide");
 let scrollYpos;
 window.addEventListener("scroll", function() {
     scrollYpos = window.scrollY;
-    if(scrollYpos > 250) {
+    if(scrollYpos > 350) {
         slides.forEach(element => {
             element.classList.add("on");
         });
@@ -19,9 +19,15 @@ window.addEventListener("scroll", function() {
     }
 });
 
+let li1 = document.querySelector(".li1").offsetWidth;
 let li2 = document.querySelector(".li2").offsetWidth;
 let li3 = document.querySelector(".li3").offsetWidth;
+let li = document.querySelector(".li1").offsetHeight;
 let articleHeight = document.querySelector(".article_1").offsetHeight;
+
+document.querySelector(".word9").style.width = `${li1 + 10}px`;
+document.querySelector(".word9").style.height = `${li}px`;
+document.querySelector(".word9 > li").style.transform = `translateY(${li * -2}px)`;
 
 const scroll = gsap.timeline({
     scrollTrigger: {
@@ -30,21 +36,13 @@ const scroll = gsap.timeline({
         end: "+=15000",
         scrub: true,
         pin: true,
-        // markers: true,
     }
 });
 
-scroll.from(".slide_L", {
-    scrollTrigger: {
-        start: "100",
-        end: "400",
-    }, left: "80%", opacity: 0, })
-.from(".slide_R", {
-    scrollTrigger: {
-        start: "100",
-        end: "400",
-    }, left: "-80%", opacity: 0, }, "<")
-.to(".middle", { scale: 0, duration: 3, }, "<")
+scroll.from(".scroll_1", { backgroundColor: "#3D61AD", })
+.to(".middle", { scale: 0, duration: 4, }, "<")
+.from(".slide_L", { scrollTrigger: { start: "400", }, opacity: 0, duration: 1, } , "<")
+.from(".slide_R", { scrollTrigger: { start: "400", }, opacity: 0, duration: 1, }, "<")
 .to(".scroll_2", { opacity: 1, })
 .to(".word1", { y: 30, opacity: 1, })
 .to(".word2", { y: 30, opacity: 1, })
@@ -57,11 +55,11 @@ scroll.from(".slide_L", {
 .to(".word9", { y: 90, opacity: 1, })
 .to(".word10", { y: 90, opacity: 1, })
 .to(".line", { width: "100%", })
-.to("li", { y: -103.2, })
-.to(".word9", { width: `${li2}`, }, "<")
+.to("li", { y: `${li * -1}`, })
+.to(".word9", { width: `${li2 + 10}`, }, "<")
 .to("li", { y: 0, })
-.to(".word9", { width: `${li3}`, }, "<")
-.to(".scroll_3", { opacity: 1, })
+.to(".word9", { width: `${li3 + 10}`, }, "<")
+.to(".scroll_3", { delay: 0.5, opacity: 1, })
 .to(".container", { bottom: 0, duration: 4, })
 .to(".w1", { opacity: 1, ease: Circ.easeIn, }, "<")
 .to(".w2", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
