@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -51,7 +52,7 @@ section .slide_text {
   width: 100%;
   position: fixed;
   height: 100%;
-  font-size: 200px;
+  font-size: 100px;
   font-family: "Square Peg", cursive;
   display: flex;
   flex-direction: column;
@@ -95,7 +96,7 @@ section .slide_text_2 {
 section .slide_text_2 .stagger_item {
   opacity: 0;
   display: inline-block;
-  font-size: 120px;
+  font-size: 100px;
   padding: 20px;
   color: white;
 }

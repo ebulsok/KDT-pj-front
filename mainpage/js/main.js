@@ -1,14 +1,12 @@
-
 const bodyEl = document.querySelector("body");
 
-
 const slidetext = document.querySelector(".slide_text");
-const slideEl2 =document.querySelector(".slide_text_2")
-const slideEl = document.querySelectorAll(".slide")
-const slideElR = document.querySelectorAll(".slide_R")
-const slogan =document.querySelector(".slogan")
-const underBtn=document.querySelector(".footer > a");
-const staggerItem=document.querySelectorAll(".stagger_item");
+const slideEl2 = document.querySelector(".slide_text_2");
+const slideEl = document.querySelectorAll(".slide");
+const slideElR = document.querySelectorAll(".slide_R");
+const slogan = document.querySelector(".slogan");
+const underBtn = document.querySelector(".footer > a");
+const staggerItem = document.querySelectorAll(".stagger_item");
 
 // querySelectorAll로 불러오는 요소는 요소를 하나로 불러오는게 아니라
 // 각각의 요소들을 배열 형태로 불러오게 됩니다.
@@ -20,90 +18,120 @@ const staggerItem=document.querySelectorAll(".stagger_item");
 
 let scrollYpos;
 
-window.addEventListener("scroll", function(){
-    scrollYpos = window.scrollY;
+window.addEventListener("scroll", function () {
+  scrollYpos = window.scrollY;
 
-    if(scrollYpos > 0 && scrollYpos <= 4600){
-         bodyEl.style.backgroundColor="red";
-         underBtn.style.color="white";       
-         slogan.style.transform = `scale(${80/scrollYpos})`;
-         console.log(scrollYpos);    
-    }
-    // 슬라이드가 시작되는 시점
-     if(scrollYpos > 0 && scrollYpos <13000){
-        slideEl[0].classList.add("on") ;
-        slideEl[1].classList.add("on") ;
-        slideElR[0].classList.add("on");
-        slideElR[1].classList.add("on");
-        
-    }
+  if (scrollYpos > 0 && scrollYpos <= 4600) {
+    bodyEl.style.backgroundColor = "red";
+    underBtn.style.color = "white";
+    slogan.style.transform = `scale(${80 / scrollYpos})`;
+    console.log(scrollYpos);
+  }
+  // 슬라이드가 시작되는 시점
+  if (scrollYpos > 0 && scrollYpos < 13000) {
+    slideEl[0].classList.add("on");
+    slideEl[1].classList.add("on");
+    slideElR[0].classList.add("on");
+    slideElR[1].classList.add("on");
+  }
 
   //가운데 문자가 없어지는 시점
-    if(scrollYpos > 4601 && scrollYpos <=5600){
-        bodyEl.style.backgroundColor="yellowgreen";   
-        slogan.style.display="none";
-        // alert("!");
- 
+  if (scrollYpos > 4601 && scrollYpos <= 5600) {
+    bodyEl.style.backgroundColor = "yellowgreen";
+    slogan.style.display = "none";
+    // alert("!");
+  }
+
+  //슬라이드 문자가 흐릿해지는 시점
+  if (scrollYpos > 5600 && scrollYpos < 9500) {
+    slidetext.style.opacity = `${3500 / scrollYpos}`;
+    console.log(scrollYpos);
+  }
+
+  // 첫번째 슬라이드가 사라지는 지점
+  if (scrollYpos >= 9500) {
+    slidetext.style.display = "none";
+  }
+
+  let staggerItemlen = staggerItem.length;
+  let dx = 50;
+  const 시작 = 8000;
+  const 종료 = 시작 + dx * 10;
+  for (let i = 0; i < staggerItemlen; i++) {
+    if (scrollYpos >= 시작 + i * dx && scrollYpos < 종료 + i * dx) {
+      bodyEl.style.backgroundColor = "skyblue";
+      console.log(scrollYpos);
+      staggerItem[i].style.transform = `translateY(${
+        (시작 + i * dx - scrollYpos) / 4
+      }px)`;
+      a = 시작 + i * dx;
+      b = 종료 + i * dx;
+      console.log("a,b,i", a, b, i);
+      staggerItem[i].style.opacity = `${(scrollYpos - a / b - a) / 100}`;
+
+      let opacity = staggerItem[0].style.opacity;
+      console.log("opacity", opacity);
     }
-    
- //슬라이드 문자가 흐릿해지는 시점
-    if(scrollYpos >5600 && scrollYpos <9500){
-        slidetext.style.opacity= `${3500/scrollYpos}`;
-        console.log(scrollYpos);  
+  }
+
+  // 마우스 휠에 따라 배경색 바뀌는 JS
+
+  var colors = ["#F2B705", "#F25C05", "#0388A6", "#0E5929", "#F272A1"];
+
+  var container = document.getElementById("slide_text");
+  // var text = document.getElementById("value");
+  // var color = document.getElementById("color");
+
+  container.onwheel = changeBgColor;
+
+  var colorIndex = 0;
+  var scrollValue = 0;
+  var dateNow = Date.now();
+
+  function changeBgColor(e) {
+    scrollValue += e.deltaY * 0.01;
+    text.textContent = Math.floor(scrollValue);
+
+    timePassed = Date.now() - dateNow;
+    if (scrollValue > 10 && timePassed > 500) {
+      dateNow = Date.now();
+      colorIndex += 1;
+      if (colorIndex > colors.length - 1) colorIndex = 0;
+
+      container.style.backgroundColor = colors[colorIndex];
     }
 
-    // 첫번째 슬라이드가 사라지는 지점
-    if(scrollYpos>=9500) {
-        slidetext.style.display="none";
+    if (scrollValue < -10 && timePassed > 500) {
+      dateNow = Date.now();
+      colorIndex -= 1;
+      if (colorIndex < 0) colorIndex = colors.length - 1;
+
+      container.style.backgroundColor = colors[colorIndex];
     }
+    e.preventDefault(); // disable the actual scrolling
+  }
 
-    
+  // <opacity 공식>
+  // dx = 50 일때
+  // a : 8000 + i*dx
+  // b : 8400 + i*dx
+  //                 a      b
+  // i : 0  => scr : 8000 ~ 8400 | i*dx = 50
+  // i : 1  => scr : 8050 ~ 8450 | i*dx = 100
+  // ...
+  // i : 10 => scr : 8500 ~ 8900 | i*dx = 500
+  //                 0    -    1
+  // target : 0/400 ~ 400/400 (scrollYpos-a / b-a)
 
-    let staggerItemlen = staggerItem.length;
-    let dx = 50;
-    const 시작 = 8000;
-    const 종료 = 시작 + dx*10;
-    for(let i=0; i<staggerItemlen; i++){
-        if(scrollYpos >= 시작 + i*dx && scrollYpos < 종료 + i*dx ){
-            bodyEl.style.backgroundColor="skyblue";
-            console.log(scrollYpos);  
-            staggerItem[i].style.transform= `translateY(${(시작+ i*dx - scrollYpos)/4 }px)`;
-            a = 시작 + i*dx
-            b = 종료 + i*dx
-            console.log('a,b,i',a,b,i)
-            staggerItem[i].style.opacity = `${(scrollYpos-a / b-a) /100}`
+  // <화이트 - 블랙>
 
-            let opacity= staggerItem[0].style.opacity;
-            console.log('opacity',opacity);
+  // < intriguing - surprising>
 
-        } 
-    }
+  //세번째 슬라이드 시작지점
+});
 
-    // <opacity 공식>
-    // dx = 50 일때
-    // a : 8000 + i*dx
-    // b : 8400 + i*dx
-    //                 a      b
-    // i : 0  => scr : 8000 ~ 8400 | i*dx = 50
-    // i : 1  => scr : 8050 ~ 8450 | i*dx = 100
-    // ...
-    // i : 10 => scr : 8500 ~ 8900 | i*dx = 500
-    //                 0    -    1
-    // target : 0/400 ~ 400/400 (scrollYpos-a / b-a)
-
-
-    // <화이트 - 블랙>
-
-    // < intriguing - surprising>
-
-    //세번째 슬라이드 시작지점
-
-
-})
-
-
-    // function funk(){
-    //     slideEl2.style.display= "none";
-    //     bodyEl.style.backgroundColor="aqua";
-    //     underBtn.style.color="rgb(209, 209, 117)";
-    //     slogan.style.display="block"; 
+// function funk(){
+//     slideEl2.style.display= "none";
+//     bodyEl.style.backgroundColor="aqua";
+//     underBtn.style.color="rgb(209, 209, 117)";
+//     slogan.style.display="block";
