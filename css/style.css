@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 /* FONTS*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
@@ -6,6 +7,9 @@
   font-family: "Cafe24Oneprettynight";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff");
 }
+=======
+/* FONTS*/
+>>>>>>> slide2
 /* RESET */
 * {
   margin: 0px;
@@ -22,6 +26,7 @@ a {
   color: black;
 }
 
+<<<<<<< HEAD
 body {
   overflow-x: hidden;
 }
@@ -280,5 +285,8 @@ section .scroll_4 .article_wrapper article .inner ul {
 section .scroll_4 .article_wrapper article .inner ul.sub {
   justify-content: space-between;
 }
+=======
+/* COMMON */
+>>>>>>> slide2
 
 /*# sourceMappingURL=style.css.map */
