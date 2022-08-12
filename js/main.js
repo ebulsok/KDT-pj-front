@@ -30,7 +30,7 @@ const scroll = gsap.timeline({
         end: "+=15000",
         scrub: true,
         pin: true,
-        markers: true,
+        // markers: true,
     }
 });
 
@@ -72,7 +72,7 @@ scroll.from(".slide_L", {
 .to(".w7", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
 .to(".w8", { opacity: 1, delay: 0.1, ease: Circ.easeIn, }, "<")
 .to(".scroll_4", { opacity: 1, duration: 0.7, })
-.to(".main_title", { opacity: 1, y: 40, duration: 0.7, })
-.to(".article_1", { opacity: 1, y: 150, duration: 0.7, })
-.to(".article_2", { opacity: 1, y: 150, duration: 0.7, })
-.to(".article_3", { opacity: 1, y: 150, duration: 0.7, });
+.from(".main_title", { opacity: 0, top: 0, duration: 0.7, })
+.from(".article_1", { opacity: 0, duration: 0.7, })
+.from(".article_2", { opacity: 0, duration: 0.7, })
+.from(".article_3", { opacity: 0, duration: 0.7, });
