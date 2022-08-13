@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* FONTS*/
-@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 @font-face {
   font-family: "Cafe24Oneprettynight";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff");
@@ -8,6 +7,18 @@
 @font-face {
   font-family: "LeferiPoint-SpecialItalicA";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-SpecialItalicA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PyeongChangPeace-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "LeferiBaseType-RegularA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -48,7 +59,8 @@ section header {
   padding: 2vh 2vw;
 }
 section header a {
-  font: bold 30px "arial";
+  font: bold 2.5vw "PyeongChangPeace-Bold";
+  animation: 2s rainbow infinite;
 }
 section .scroll_1 {
   width: 100%;
@@ -78,23 +90,23 @@ section .scroll_1 .slide:nth-of-type(4) {
   top: calc(80vh - 25px);
 }
 section .scroll_1 .slide.on.slide_L .scroll_wrap.roller_1 {
-  animation: 13s linear 0s infinite normal forwards running rollingleft1;
+  animation: 20s linear 0s infinite normal forwards running rollingleft1;
 }
 section .scroll_1 .slide.on.slide_L .scroll_wrap.roller_2 {
-  animation: 13s linear 0s infinite normal none running rollingleft2;
+  animation: 20s linear 0s infinite normal none running rollingleft2;
 }
 section .scroll_1 .slide.on.slide_R .scroll_wrap.roller_1 {
-  animation: 13s linear 0s infinite normal none running rollingright1;
+  animation: 17s linear 0s infinite normal none running rollingright1;
 }
 section .scroll_1 .slide.on.slide_R .scroll_wrap.roller_2 {
-  animation: 13s linear 0s infinite normal forwards running rollingright2;
+  animation: 17s linear 0s infinite normal forwards running rollingright2;
 }
 section .scroll_1 .slide .scroll_wrap {
   will-change: transform;
   white-space: nowrap;
 }
 section .scroll_1 .slide .scroll_wrap > span {
-  font-size: 50px;
+  font-size: 3vw;
   word-spacing: 20px;
   letter-spacing: 5px;
 }
@@ -103,7 +115,7 @@ section .scroll_1 .middle {
   position: absolute;
   top: calc(50vh - 40px);
   text-align: center;
-  font-size: 80px;
+  font-size: 6vw;
   font-weight: bold;
   transition: 0.1s;
 }
@@ -162,29 +174,37 @@ section .scroll_2 {
 }
 section .scroll_2 > div {
   display: flex;
+  position: absolute;
+  left: 0;
+}
+section .scroll_2 > div:nth-of-type(1) {
+  top: 20%;
+}
+section .scroll_2 > div:nth-of-type(2) {
+  top: 40%;
+}
+section .scroll_2 > div:nth-of-type(3) {
+  top: 60%;
 }
 section .scroll_2 > div > * {
-  font: 90px "LeferiPoint-SpecialItalicA";
+  font: 6vw "LeferiPoint-SpecialItalicA";
   color: white;
-  margin-left: 20px;
-  opacity: 0;
+  margin-left: 1.7vw;
 }
-section .scroll_2 > div > *.word9 {
+section .scroll_2 > div > *.word4 {
   width: 1px;
   height: 1px;
   overflow: hidden;
-  position: relative;
 }
-section .scroll_2 > div > *.word9 li {
-  transform: translateY(-238px);
+section .scroll_2 > div > *.word4 li {
   display: inline-block;
 }
-section .scroll_2 > div > *.word9 .line {
+section .scroll_2 > div > *.word4 .line {
   width: 0px;
-  height: 10px;
+  height: 1vw;
   background-color: white;
   position: absolute;
-  bottom: 0;
+  bottom: 15%;
   opacity: 0.5;
 }
 section .scroll_3 {
@@ -203,11 +223,14 @@ section .scroll_3 .container {
 section .scroll_3 .container > div {
   display: flex;
 }
-section .scroll_3 .container > div > * {
-  font: 90px "LeferiPoint-SpecialItalicA";
+section .scroll_3 .container > div > div {
+  font: 6.5vw "LeferiPoint-SpecialItalicA";
   color: white;
-  margin-left: 30px;
+  margin-left: 2vw;
   opacity: 0;
+}
+section .scroll_3 .container > div > div.w3, section .scroll_3 .container > div > div.w6 {
+  animation: 1s rainbow infinite;
 }
 section .scroll_4 {
   width: 100%;
@@ -228,10 +251,12 @@ section .scroll_4 video {
 section .scroll_4 .main_title {
   width: 100%;
   position: absolute;
-  top: 8%;
+  top: 12%;
   left: 0;
   text-align: center;
-  font: 400 4.5vw/1 "LeferiPoint-SpecialItalicA";
+  font: bold 4.5vw/1 "LeferiPoint-SpecialItalicA";
+  color: white;
+  text-shadow: 3px 3px 3px black;
 }
 section .scroll_4 .article_wrapper {
   display: flex;
@@ -245,14 +270,31 @@ section .scroll_4 .article_wrapper {
 section .scroll_4 .article_wrapper article {
   width: 25%;
   height: 60vh;
-  padding: 5px;
-  background-color: lightblue;
+  padding: 0.5vw;
+}
+section .scroll_4 .article_wrapper article:nth-of-type(1) {
+  background-color: #E16262;
+}
+section .scroll_4 .article_wrapper article:nth-of-type(1) a {
+  color: #E16262;
+}
+section .scroll_4 .article_wrapper article:nth-of-type(2) {
+  background-color: #FABC60;
+}
+section .scroll_4 .article_wrapper article:nth-of-type(2) a {
+  color: #FABC60;
+}
+section .scroll_4 .article_wrapper article:nth-of-type(3) {
+  background-color: #3A9679;
+}
+section .scroll_4 .article_wrapper article:nth-of-type(3) a {
+  color: #3A9679;
 }
 section .scroll_4 .article_wrapper article .inner {
   width: 100%;
   height: 100%;
   background-color: white;
-  font-family: "NEXON Lv1 Gothic OTF";
+  font-family: "LeferiBaseType-RegularA";
 }
 section .scroll_4 .article_wrapper article .inner .article_image {
   width: 100%;
@@ -286,16 +328,43 @@ section .scroll_4 .article_wrapper article .inner .article_content ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 0 10%;
+  padding: 1.5% 10%;
   font-size: 0.9vw;
   color: #999;
 }
-section .scroll_4 .article_wrapper article .inner .article_content ul.sub {
-  justify-content: space-between;
-  color: black;
-}
 section .scroll_4 .article_wrapper article .inner .article_content ul li {
-  margin-bottom: 5px;
+  margin-bottom: 0.5vh;
+}
+section .scroll_4 .article_wrapper article .inner .article_content a {
+  text-align: center;
+  margin-bottom: 1vh;
+}
+
+@keyframes rainbow {
+  0% {
+    color: #ff2a2a;
+  }
+  15% {
+    color: #ff7a2a;
+  }
+  30% {
+    color: #ffc52a;
+  }
+  45% {
+    color: #43ff2a;
+  }
+  60% {
+    color: #2a89ff;
+  }
+  75% {
+    color: #202082;
+  }
+  90% {
+    color: #6b2aff;
+  }
+  100% {
+    color: #e82aff;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,8 +3,6 @@
     font-family: "Cafe24Oneprettynight";
     src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff");
 }
-@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
-//   font-family: 'Courgette', cursive;
 
 @font-face {
     font-family: 'LeferiPoint-SpecialItalicA';
@@ -12,6 +10,21 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LeferiBaseType-RegularA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* RESET */
 @import "reset";
@@ -37,7 +50,8 @@ section {
         padding: 2vh 2vw;
 
         a {
-            font: bold 30px 'arial';
+            font: bold 2.5vw 'PyeongChangPeace-Bold';
+            animation: 2s rainbow infinite;
         }
     }
 
@@ -45,4 +59,15 @@ section {
     @import "scroll2";
     @import "scroll3";
     @import "scroll4";
+}
+
+@keyframes rainbow {     
+    0% { color: #ff2a2a; }
+    15% { color: #ff7a2a; }
+    30% { color: #ffc52a; }
+    45% { color: #43ff2a; }
+    60% { color: #2a89ff; }
+    75% { color: #202082; }
+    90% { color: #6b2aff; } 
+    100% { color: #e82aff; }
 }

@@ -10,27 +10,20 @@
     .container {
         width: 100%;
         position: absolute;
-        // background-color: lightblue;
 
         > div {
             display: flex;
     
-            > * {
-                font: 90px 'LeferiPoint-SpecialItalicA';
+            > div {
+                font: 6.5vw 'LeferiPoint-SpecialItalicA';
                 color: white;
-                margin-left: 30px;
+                margin-left: 2vw;
                 opacity: 0;
+
+                &.w3, &.w6 {
+                    animation: 1s rainbow infinite;
+                }
             }
         }
     }
-    // > div {
-    //     display: flex;
-
-    //     > * {
-    //         font: 90px 'arial';
-    //         color: white;
-    //         margin-left: 30px;
-    //         opacity: 0;
-    //     }
-    // }
 }

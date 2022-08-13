@@ -30,10 +30,10 @@
             &.slide_L {
                 .scroll_wrap {
                     &.roller_1{
-                        animation: 13s linear 0s infinite normal forwards running rollingleft1;
+                        animation: 20s linear 0s infinite normal forwards running rollingleft1;
                     }
                     &.roller_2{
-                        animation: 13s linear 0s infinite normal none running rollingleft2;
+                        animation: 20s linear 0s infinite normal none running rollingleft2;
                     }
                 }
             }
@@ -41,10 +41,10 @@
             &.slide_R {
                 .scroll_wrap {
                     &.roller_1{
-                        animation: 13s linear 0s infinite normal none running rollingright1;
+                        animation: 17s linear 0s infinite normal none running rollingright1;
                     }
                     &.roller_2{
-                        animation: 13s linear 0s infinite normal forwards running rollingright2;
+                        animation: 17s linear 0s infinite normal forwards running rollingright2;
                     }
                 }
             }
@@ -55,7 +55,7 @@
             white-space: nowrap;
 
             > span {
-                font-size: 50px;
+                font-size: 3vw;
                 word-spacing: 20px;
                 letter-spacing: 5px;
             }
@@ -67,7 +67,7 @@
         position: absolute;
         top: calc(50vh - 40px);
         text-align: center;
-        font-size: 80px;
+        font-size: 6vw;
         font-weight: bold;
         transition: .1s;
     }
