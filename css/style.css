@@ -1,15 +1,23 @@
-<<<<<<< HEAD
 @charset "UTF-8";
 /* FONTS*/
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 @font-face {
-  font-family: "Cafe24Oneprettynight";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff");
+  font-family: "LeferiPoint-SpecialItalicA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-SpecialItalicA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
-=======
-/* FONTS*/
->>>>>>> slide2
+@font-face {
+  font-family: "PyeongChangPeace-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "LeferiBaseType-RegularA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 /* RESET */
 * {
   margin: 0px;
@@ -26,7 +34,6 @@ a {
   color: black;
 }
 
-<<<<<<< HEAD
 body {
   overflow-x: hidden;
 }
@@ -45,10 +52,11 @@ section header {
   top: 0;
   left: 0;
   z-index: 10;
-  padding: 2vh 2vw;
+  padding: 3vh 3vw;
 }
 section header a {
-  font: bold 30px "arial";
+  font: bold 2.5vw "PyeongChangPeace-Bold";
+  color: white;
 }
 section .scroll_1 {
   width: 100%;
@@ -56,9 +64,10 @@ section .scroll_1 {
   position: absolute;
   top: 0px;
   left: 0px;
-  background-color: lightblue;
+  background-color: #E16262;
   overflow: hidden;
   transition: 1s;
+  font-family: "LeferiPoint-SpecialItalicA";
 }
 section .scroll_1 .slide {
   display: flex;
@@ -77,33 +86,33 @@ section .scroll_1 .slide:nth-of-type(4) {
   top: calc(80vh - 25px);
 }
 section .scroll_1 .slide.on.slide_L .scroll_wrap.roller_1 {
-  animation: 13s linear 0s infinite normal forwards running rollingleft1;
+  animation: 20s linear 0s infinite normal forwards running rollingleft1;
 }
 section .scroll_1 .slide.on.slide_L .scroll_wrap.roller_2 {
-  animation: 13s linear 0s infinite normal none running rollingleft2;
+  animation: 20s linear 0s infinite normal none running rollingleft2;
 }
 section .scroll_1 .slide.on.slide_R .scroll_wrap.roller_1 {
-  animation: 13s linear 0s infinite normal none running rollingright1;
+  animation: 17s linear 0s infinite normal none running rollingright1;
 }
 section .scroll_1 .slide.on.slide_R .scroll_wrap.roller_2 {
-  animation: 13s linear 0s infinite normal forwards running rollingright2;
+  animation: 17s linear 0s infinite normal forwards running rollingright2;
 }
 section .scroll_1 .slide .scroll_wrap {
   will-change: transform;
   white-space: nowrap;
 }
 section .scroll_1 .slide .scroll_wrap > span {
-  font-size: 60px;
+  font-size: 3vw;
   word-spacing: 20px;
   letter-spacing: 5px;
 }
 section .scroll_1 .middle {
   width: 100%;
   position: absolute;
-  top: calc(50vh - 25px);
+  top: calc(50vh - 40px);
   text-align: center;
-  font-size: 60px;
-  line-height: 60px;
+  font-size: 6vw;
+  font-weight: bold;
   transition: 0.1s;
 }
 @keyframes rollingright1 { /* 원본용 */
@@ -156,34 +165,42 @@ section .scroll_2 {
   position: absolute;
   top: 0px;
   left: 0px;
-  background-color: blue;
+  background-color: #FABC60;
   opacity: 0;
 }
 section .scroll_2 > div {
   display: flex;
+  position: absolute;
+  left: 0;
+}
+section .scroll_2 > div:nth-of-type(1) {
+  top: 20%;
+}
+section .scroll_2 > div:nth-of-type(2) {
+  top: 40%;
+}
+section .scroll_2 > div:nth-of-type(3) {
+  top: 60%;
 }
 section .scroll_2 > div > * {
-  font: 90px "arial";
+  font: 6vw "LeferiPoint-SpecialItalicA";
   color: white;
-  margin-left: 20px;
-  opacity: 0;
+  margin-left: 1.7vw;
 }
-section .scroll_2 > div > *.word9 {
-  width: 365px;
-  height: 103.2px;
+section .scroll_2 > div > *.word4 {
+  width: 1px;
+  height: 1px;
   overflow: hidden;
-  position: relative;
 }
-section .scroll_2 > div > *.word9 li {
-  transform: translateY(-206.4px);
+section .scroll_2 > div > *.word4 li {
   display: inline-block;
 }
-section .scroll_2 > div > *.word9 .line {
+section .scroll_2 > div > *.word4 .line {
   width: 0px;
-  height: 10px;
+  height: 1vw;
   background-color: white;
   position: absolute;
-  bottom: 0;
+  bottom: 15%;
   opacity: 0.5;
 }
 section .scroll_3 {
@@ -192,7 +209,7 @@ section .scroll_3 {
   position: absolute;
   top: 0px;
   left: 0px;
-  background-color: darkslateblue;
+  background-color: #3A9679;
   opacity: 0;
 }
 section .scroll_3 .container {
@@ -202,65 +219,82 @@ section .scroll_3 .container {
 section .scroll_3 .container > div {
   display: flex;
 }
-section .scroll_3 .container > div > * {
-  font: 90px "arial";
+section .scroll_3 .container > div > div {
+  font: 6.5vw "LeferiPoint-SpecialItalicA";
   color: white;
-  margin-left: 30px;
+  margin-left: 2vw;
   opacity: 0;
+}
+section .scroll_3 .container > div > div.w3, section .scroll_3 .container > div > div.w6 {
+  animation: 1s rainbow infinite;
 }
 section .scroll_4 {
   width: 100%;
   height: 100vh;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   opacity: 0;
 }
 section .scroll_4 video {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   object-fit: cover;
 }
 section .scroll_4 .main_title {
   width: 100%;
   position: absolute;
-  top: 0;
+  top: 12%;
   left: 0;
   text-align: center;
-  margin-top: 30px;
-  font: 400 60px/1 "Courgette", cursive;
-  text-shadow: 0 -3px 0 #333, 0 6px 8px rgba(0, 0, 0, 0.4), 0 9px 10px rgba(0, 0, 0, 0.15), 0 30px 10px rgba(0, 0, 0, 0.18), 0 15px 10px rgba(0, 0, 0, 0.21);
-  opacity: 0;
+  font: bold 4.5vw/1 "LeferiPoint-SpecialItalicA";
+  color: white;
+  text-shadow: 3px 3px 3px black;
 }
 section .scroll_4 .article_wrapper {
   display: flex;
   width: 100%;
   position: absolute;
-  top: 50px;
+  top: 50%;
   left: 0;
+  transform: translate(0, -40%);
   justify-content: space-evenly;
 }
 section .scroll_4 .article_wrapper article {
   width: 25%;
-  padding: 5px;
-  background-color: lightblue;
-  opacity: 0;
+  height: 60vh;
+  padding: 0.5vw;
+}
+section .scroll_4 .article_wrapper article.article_1 {
+  background-color: #E16262;
+}
+section .scroll_4 .article_wrapper article.article_1 a {
+  color: #E16262;
+}
+section .scroll_4 .article_wrapper article.article_2 {
+  background-color: #FABC60;
+}
+section .scroll_4 .article_wrapper article.article_2 a {
+  color: #FABC60;
+}
+section .scroll_4 .article_wrapper article.article_3 {
+  background-color: #3A9679;
+}
+section .scroll_4 .article_wrapper article.article_3 a {
+  color: #3A9679;
 }
 section .scroll_4 .article_wrapper article .inner {
   width: 100%;
-  padding-bottom: 5px;
+  height: 100%;
   background-color: white;
-  font-family: "Cafe24Oneprettynight";
-}
-section .scroll_4 .article_wrapper article .inner > * {
-  margin-bottom: 15px;
+  font-family: "LeferiBaseType-RegularA";
 }
 section .scroll_4 .article_wrapper article .inner .article_image {
   width: 100%;
-  height: 250px;
+  height: 30vh;
   overflow: hidden;
 }
 section .scroll_4 .article_wrapper article .inner .article_image img {
@@ -268,25 +302,66 @@ section .scroll_4 .article_wrapper article .inner .article_image img {
   object-fit: cover;
   object-position: center;
 }
-section .scroll_4 .article_wrapper article .inner h2, section .scroll_4 .article_wrapper article .inner h3 {
-  text-align: center;
-  letter-spacing: 0.3rem;
+section .scroll_4 .article_wrapper article .inner .article_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 30vh;
 }
-section .scroll_4 .article_wrapper article .inner h3 {
-  letter-spacing: 0.5rem;
+section .scroll_4 .article_wrapper article .inner .article_content h2, section .scroll_4 .article_wrapper article .inner .article_content h3 {
+  text-align: center;
+  letter-spacing: 5px;
+}
+section .scroll_4 .article_wrapper article .inner .article_content h2 {
+  font-size: 2vw;
+}
+section .scroll_4 .article_wrapper article .inner .article_content h3 {
+  font-size: 1.2vw;
   font-style: italic;
 }
-section .scroll_4 .article_wrapper article .inner ul {
+section .scroll_4 .article_wrapper article .inner .article_content ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 0 10%;
+  padding: 1.5% 10%;
+  font-size: 0.9vw;
+  color: #999;
 }
-section .scroll_4 .article_wrapper article .inner ul.sub {
-  justify-content: space-between;
+section .scroll_4 .article_wrapper article .inner .article_content ul li {
+  margin-bottom: 0.5vh;
 }
-=======
-/* COMMON */
->>>>>>> slide2
+section .scroll_4 .article_wrapper article .inner .article_content a {
+  text-align: center;
+  margin-bottom: 1vh;
+  font-size: 1.2vw;
+}
+
+@keyframes rainbow {
+  0% {
+    color: #ff2a2a;
+  }
+  15% {
+    color: #ff7a2a;
+  }
+  30% {
+    color: #ffc52a;
+  }
+  45% {
+    color: #43ff2a;
+  }
+  60% {
+    color: #2a89ff;
+  }
+  75% {
+    color: #202082;
+  }
+  90% {
+    color: #6b2aff;
+  }
+  100% {
+    color: #e82aff;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
