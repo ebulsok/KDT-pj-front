@@ -4,23 +4,18 @@ const list = frame.querySelectorAll("article");
 const len = list.length;
 const deg = 360 / len;
 
-let korea = document.querySelector(".korea");
-
 // drag rotate
 let startX, endX;
 let temp = 0;
 
 body.addEventListener("mousedown", function (e) {
   startX = e.screenX;
-
   figure.style.cursor = "grabbing";
 });
 
 body.addEventListener("mouseup", function (e) {
   endX = e.screenX;
   frame.style.transform = `rotate(${(temp = temp - (startX - endX) / 15)}deg)`;
-  console.log(temp);
-
   figure.style.cursor = "grab";
 });
 
@@ -33,13 +28,6 @@ for (let i = 0; i < len; i++) {
 
     if (temp > 0) {
       deg_rotate = quot * 360 - deg * (len - i);
-      console.log(
-        deg_rotate,
-        -temp,
-        -temp + deg_rotate,
-        deg_rotate + temp,
-        quot
-      );
       if (-temp - deg_rotate < -180)
         deg_rotate = --quot * 360 - deg * (len - i);
       else if (deg_rotate + temp < -180)
@@ -53,7 +41,6 @@ for (let i = 0; i < len; i++) {
       if (-temp - deg_rotate > 180) deg_rotate = ++quot * 360 + deg * i;
       else if (deg_rotate + temp > 180) deg_rotate = --quot * 360 + deg * i;
     }
-
     frame.style.transform = `rotate(${-deg_rotate}deg)`;
   });
 }
@@ -107,14 +94,14 @@ figure.addEventListener("click", (e) => {
 });
 
 const colorList = [
-  "rgb(157, 138, 130)",
-  "rgb(198, 145, 167)",
   "rgb(222, 172, 64)",
   "rgb(61, 120, 81)",
   "rgb(60, 107, 150)",
   "rgb(121, 90, 132)",
   "rgb(190, 103, 90)",
   "rgb(148, 148, 148)",
+  "rgb(157, 138, 130)",
+  "rgb(198, 145, 167)",
 ];
 const frontPage = document.querySelectorAll(".page_front");
 const photoCard = document.querySelectorAll(".photo_card");
@@ -124,74 +111,70 @@ for (let i = 0; i < len; i++) {
   photoCard[i].style.backgroundColor = colorList[i];
 }
 
-
 //mouse animation
-
-
-
 let path = window.location.pathname;
 let page = path.split("/").pop();
 
 if (page === "korea.html") {
   const koreaCover = document.querySelectorAll(".cover_korea");
   for (let i = 0; i < len; i++) {
-    koreaCover[i].style.backgroundImage = `url('../korea_img/korea_cover_${
+    koreaCover[i].style.backgroundImage = `url('../img/korea_img/korea_cover_${
       i + 1
     }.jpg')`;
   }
 
   const koreaRight = document.querySelectorAll(".korea_img.right");
   for (let i = 0; i < koreaRight.length; i++) {
-    koreaRight[i].style.backgroundImage = `url('../korea_img/korea_right_${
+    koreaRight[i].style.backgroundImage = `url('../img/korea_img/korea_right_${
       i + 1
     }.jpg')`;
   }
 
   const koreaLeft = document.querySelectorAll(".korea_img.left");
   for (let i = 0; i < koreaLeft.length; i++) {
-    koreaLeft[i].style.backgroundImage = `url('../korea_img/korea_left_${
+    koreaLeft[i].style.backgroundImage = `url('../img/korea_img/korea_left_${
       i + 1
     }.jpg')`;
   }
 } else if (page === "spain.html") {
   const spainCover = document.querySelectorAll(".cover_spain");
   for (let i = 0; i < len; i++) {
-    spainCover[i].style.backgroundImage = `url('../spain_img/spain_cover_${
+    spainCover[i].style.backgroundImage = `url('../img/spain_img/spain_cover_${
       i + 1
     }.jpg')`;
   }
 
   const spainRight = document.querySelectorAll(".spain_img.right");
   for (let i = 0; i < spainRight.length; i++) {
-    spainRight[i].style.backgroundImage = `url('../spain_img/spain_right_${
+    spainRight[i].style.backgroundImage = `url('../img/spain_img/spain_right_${
       i + 1
     }.jpg')`;
   }
 
   const spainLeft = document.querySelectorAll(".spain_img.left");
   for (let i = 0; i < spainLeft.length; i++) {
-    spainLeft[i].style.backgroundImage = `url('../spain_img/spain_left_${
+    spainLeft[i].style.backgroundImage = `url('../img/spain_img/spain_left_${
       i + 1
     }.jpg')`;
   }
 } else if (page === "italy.html") {
   const italyCover = document.querySelectorAll(".cover_italy");
   for (let i = 0; i < len; i++) {
-    italyCover[i].style.backgroundImage = `url('../italy_img/italy_cover_${
+    italyCover[i].style.backgroundImage = `url('../img/italy_img/italy_cover_${
       i + 1
     }.jpg')`;
   }
 
   const italyRight = document.querySelectorAll(".italy_img.right");
   for (let i = 0; i < italyRight.length; i++) {
-    italyRight[i].style.backgroundImage = `url('../italy_img/italy_right_${
+    italyRight[i].style.backgroundImage = `url('../img/italy_img/italy_right_${
       i + 1
     }.jpg')`;
   }
 
   const italyLeft = document.querySelectorAll(".italy_img.left");
   for (let i = 0; i < italyLeft.length; i++) {
-    italyLeft[i].style.backgroundImage = `url('../italy_img/italy_left_${
+    italyLeft[i].style.backgroundImage = `url('../img/italy_img/italy_left_${
       i + 1
     }.jpg')`;
   }
