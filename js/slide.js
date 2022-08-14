@@ -10,13 +10,11 @@ let temp = 0;
 
 body.addEventListener("mousedown", function (e) {
   startX = e.screenX;
-  figure.style.cursor = "grabbing";
 });
 
 body.addEventListener("mouseup", function (e) {
   endX = e.screenX;
   frame.style.transform = `rotate(${(temp = temp - (startX - endX) / 15)}deg)`;
-  figure.style.cursor = "grab";
 });
 
 for (let i = 0; i < len; i++) {
@@ -111,71 +109,79 @@ for (let i = 0; i < len; i++) {
   photoCard[i].style.backgroundColor = colorList[i];
 }
 
-//mouse animation
-let path = window.location.pathname;
-let page = path.split("/").pop();
+//css 사진
+let page = window.location.pathname.split("/").pop();
+let leftImg = document.querySelectorAll(".photo_img.left");
+let coverImg = document.querySelectorAll(".cover");
+let rightImg = document.querySelectorAll(".photo_img.right");
 
 if (page === "korea.html") {
-  const koreaCover = document.querySelectorAll(".cover_korea");
-  for (let i = 0; i < len; i++) {
-    koreaCover[i].style.backgroundImage = `url('../img/korea_img/korea_cover_${
+  for (let i = 0; i < coverImg.length; i++) {
+    coverImg[i].style.backgroundImage = `url('../img/korea_img/korea_cover_${
       i + 1
     }.jpg')`;
   }
 
-  const koreaRight = document.querySelectorAll(".korea_img.right");
-  for (let i = 0; i < koreaRight.length; i++) {
-    koreaRight[i].style.backgroundImage = `url('../img/korea_img/korea_right_${
+  for (let i = 0; i < rightImg.length; i++) {
+    rightImg[i].style.backgroundImage = `url('../img/korea_img/korea_right_${
       i + 1
     }.jpg')`;
   }
 
-  const koreaLeft = document.querySelectorAll(".korea_img.left");
-  for (let i = 0; i < koreaLeft.length; i++) {
-    koreaLeft[i].style.backgroundImage = `url('../img/korea_img/korea_left_${
+  for (let i = 0; i < leftImg.length; i++) {
+    leftImg[i].style.backgroundImage = `url('../img/korea_img/korea_left_${
       i + 1
     }.jpg')`;
   }
 } else if (page === "spain.html") {
-  const spainCover = document.querySelectorAll(".cover_spain");
-  for (let i = 0; i < len; i++) {
-    spainCover[i].style.backgroundImage = `url('../img/spain_img/spain_cover_${
-      i + 1
-    }.jpg')`;
+  for (let i = 0; i < coverImg.length; i++) {
+    coverImg[i].style.backgroundImage = `url('../img/spain_img/spain_cover_${i + 1}.jpg')`;
   }
 
-  const spainRight = document.querySelectorAll(".spain_img.right");
-  for (let i = 0; i < spainRight.length; i++) {
-    spainRight[i].style.backgroundImage = `url('../img/spain_img/spain_right_${
-      i + 1
-    }.jpg')`;
+  for (let i = 0; i < rightImg.length; i++) {
+    rightImg[i].style.backgroundImage = `url('../img/spain_img/spain_right_${i + 1}.jpg')`;
   }
 
-  const spainLeft = document.querySelectorAll(".spain_img.left");
-  for (let i = 0; i < spainLeft.length; i++) {
-    spainLeft[i].style.backgroundImage = `url('../img/spain_img/spain_left_${
-      i + 1
-    }.jpg')`;
+  for (let i = 0; i < leftImg.length; i++) {
+    leftImg[i].style.backgroundImage = `url('../img/spain_img/spain_left_${i + 1}.jpg')`;
   }
 } else if (page === "italy.html") {
-  const italyCover = document.querySelectorAll(".cover_italy");
-  for (let i = 0; i < len; i++) {
-    italyCover[i].style.backgroundImage = `url('../img/italy_img/italy_cover_${
-      i + 1
-    }.jpg')`;
+  for (let i = 0; i < coverImg.length; i++) {
+    coverImg[i].style.backgroundImage = `url('../img/italy_img/italy_cover_${i + 1}.jpg')`;
   }
 
-  const italyRight = document.querySelectorAll(".italy_img.right");
-  for (let i = 0; i < italyRight.length; i++) {
-    italyRight[i].style.backgroundImage = `url('../img/italy_img/italy_right_${
-      i + 1
-    }.jpg')`;
+  for (let i = 0; i < rightImg.length; i++) {
+    rightImg[i].style.backgroundImage = `url('../img/italy_img/italy_right_${i + 1}.jpg')`;
   }
 
-  const italyLeft = document.querySelectorAll(".italy_img.left");
-  for (let i = 0; i < italyLeft.length; i++) {
-    italyLeft[i].style.backgroundImage = `url('../img/italy_img/italy_left_${
-      i + 1
-    }.jpg')`;
+  for (let i = 0; i < leftImg.length; i++) {
+    leftImg[i].style.backgroundImage = `url('../img/italy_img/italy_left_${i + 1}.jpg')`;
   }
+}
+
+//mouse animation
+let mouseCursor = document.querySelector(".cursor");
+window.addEventListener("scroll", cursor);
+window.addEventListener("mousemove", cursor);
+
+function cursor(e) {
+  mouseCursor.style.left = e.pageX + "px";
+  mouseCursor.style.top = e.pageY - scrollY + "px";
+}
+
+for(let i =0; i<len; i++) {
+  if(list[i]) {
+    cursorHover(list[i]);
+  }
+}
+
+function cursorHover(target) {
+  target.addEventListener("mouseover", () => {
+    mouseCursor.style.transform = "scale(1.3)";
+    mouseCursor.style.backgroundColor = "rgb(93, 90, 90)";
+  })
+  target.addEventListener("mouseout", () => {
+    mouseCursor.style.transform = "scale(1)";
+    mouseCursor.style.backgroundColor = "";
+  })
 }
