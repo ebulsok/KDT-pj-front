@@ -318,6 +318,7 @@ section .scroll_4 .article_wrapper article {
   border-radius: 10px;
   overflow: hidden;
   transition: 1s;
+  cursor: pointer;
 }
 section .scroll_4 .article_wrapper article .bar {
   position: absolute;
