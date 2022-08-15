@@ -55,12 +55,6 @@
             overflow: hidden;
             transition: 1s;
 
-            // &:hover {
-            //     transform: scale(1.1);
-            //     box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
-            //     z-index : 100;
-            // }
-
             .bar {
                 position: absolute;
                 right: 0;
@@ -176,5 +170,16 @@
                 }
             }
         }
+    }
+
+    footer {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font: normal 0.8vw 'arial';
+        letter-spacing: 0.1vw;
+        color: #ddd;
+        text-align: center;
     }
 }

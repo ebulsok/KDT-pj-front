@@ -46,8 +46,32 @@ section {
         }
     }
 
+    .icon {
+        position: absolute;
+        left: 50%;
+        bottom: 5%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 1;
+
+        span {
+            font-size: 4vw;
+            animation: scrollIcon 2s infinite;
+            transition: .5s
+        }
+    }
+
     @import "scroll1";
     @import "scroll2";
     @import "scroll3";
     @import "scroll4";
+}
+
+@keyframes scrollIcon {
+    0% {
+        transform: translateY(0%);
+    }
+    70% {
+        transform: translateY(30%);
+    }
 }

@@ -19,10 +19,10 @@ window.addEventListener("scroll", function() {
     }
 });
 
-let li1 = document.querySelector(".li1").offsetWidth;
-let li2 = document.querySelector(".li2").offsetWidth;
-let li3 = document.querySelector(".li3").offsetWidth;
-let li = document.querySelector(".li1").offsetHeight;
+const li1 = document.querySelector(".li1").offsetWidth;
+const li2 = document.querySelector(".li2").offsetWidth;
+const li3 = document.querySelector(".li3").offsetWidth;
+const li = document.querySelector(".li1").offsetHeight;
 
 document.querySelector(".word4").style.height = `${li}px`;
 document.querySelector(".li1").style.transform = `translate(0px, ${li * -2}px)`;
@@ -34,21 +34,20 @@ const scroll = gsap.timeline({
     scrollTrigger: {
         trigger: "section",
         start: "top top",
-        end: "+=15000",
+        end: "+=20000",
         scrub: true,
         pin: true,
     }
 });
 
-
-
-scroll.from(".scroll_1", { backgroundColor: "#3D61AD", })
-.to("header>a", {color: "rgb(144, 66, 66)"})
+scroll.to(".scroll_1", { backgroundColor: "#E16262", })
+.to("header>a", { color: "rgb(144, 66, 66)"}, "<")
 .to(".middle", { scale: 0, duration: 4, }, "<")
-.from(".slide_L", { scrollTrigger: { start: "400", }, opacity: 0, duration: 1, } , "<")
-.from(".slide_R", { scrollTrigger: { start: "400", }, opacity: 0, duration: 1, }, "<")
+.to(".slide_L", { scrollTrigger: { start: "400", }, opacity: 1, duration: 1, } , "<")
+.to(".slide_R", { scrollTrigger: { start: "400", }, opacity: 1, duration: 1, }, "<")
 .to(".scroll_2", { opacity: 1, })
-.to("header>a", {color: "rgb(229, 107, 36)"})
+.to(".icon>span", { color: "white", }, "<")
+.to("header>a", { color: "rgb(229, 107, 36)"}, "<")
 .from(".word1", { y: -30, opacity: 0, })
 .from(".word2", { y: -30, opacity: 0, })
 .from(".word3", { y: -30, opacity: 0, })
@@ -65,9 +64,9 @@ scroll.from(".scroll_1", { backgroundColor: "#3D61AD", })
 .to(".word4", { width: `${li2 * 1.03}`, }, "<")
 .to("li", { y: 0, })
 .to(".word4", { width: `${li3 * 1.03}`, }, "<")
-.to(".scroll_3", { delay: 0.5, opacity: 1, })
-.to("header>a", {color: "rgb(45, 96, 34)"})
-.to(".container", { bottom: 0, duration: 4, })
+.to(".scroll_3", { delay: 1, opacity: 1, })
+.to("header>a", { color: "rgb(45, 96, 34)"}, "<")
+.to(".container", { bottom: 0, duration: 5, })
 .to(".w1", { opacity: 1, ease: Circ.easeIn, }, "<")
 .to(".w2", { opacity: 1, delay: 0.2, ease: Circ.easeIn, }, "<")
 .to(".w3", { opacity: 1, delay: 0.2, ease: Circ.easeIn, }, "<")
@@ -76,33 +75,16 @@ scroll.from(".scroll_1", { backgroundColor: "#3D61AD", })
 .to(".w6", { opacity: 1, delay: 0.2, ease: Circ.easeIn, }, "<")
 .to(".w7", { opacity: 1, delay: 0.2, ease: Circ.easeIn, }, "<")
 .to(".w8", { opacity: 1, delay: 0.2, ease: Circ.easeIn, }, "<")
+.to(".icon", { opacity: 0, delay: -1.2, })
 .to(".scroll_4", { display: "block", })
-.to(".scroll_4", { opacity: 1, duration: 0.7, })
-.to("header>a", {color: "#fff"})
-.from(".main_title", { opacity: 0, top: 0, })
+.to(".scroll_4", { opacity: 1, duration: 1, })
+.to("header>a", {color: "#fff"}, "<")
+.from(".main_title", { opacity: 0, top: 0, duration: 1, })
 .from(".article_1", { opacity: 0, duration: 0.8, })
 .from(".article_2", { opacity: 0, duration: 0.8, })
 .from(".article_3", { opacity: 0, duration: 0.8, });
 
-
-// scroll4 click
-// const scroll4 = document.querySelector(".scroll_4");
-
-// scroll4.addEventListener("click", (e) => {
-//     if(window.scrollY> 13000) {
-//         const article = e.target.closest("article");
-
-//         if(article.className === "article_1") {
-//             window.open('korea.html');
-//         } else if (article.className === "article_2") {
-//             window.open('italy.html');
-//         } else if (article.className === "article_3") {
-//             window.open('spain.html');
-//         } 
-//     }
-// })
-
-// scroll4 css
+// scroll 4
 const blackOut = document.querySelector(".black");
 const passCard = document.querySelectorAll(".article_wrapper>article");
 
@@ -122,7 +104,6 @@ for(let i=0; i<passCard.length; i++) {
         hover(passCard[i]);
     } else if(passCard[i].className === "article_2") {
         hover(passCard[i]);
-        
     } else if(passCard[i].className === "article_3") {
         hover(passCard[i]);
     }
